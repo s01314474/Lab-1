@@ -1,0 +1,90 @@
+public class Lab1 java {
+
+    // Method to return the maximum of two integers
+    public static int max(int a, int b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    // Method to return the minimum of two integers
+    public static int min(int a, int b) {
+        if (a < b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    // Method to return the sum of all values in an array
+    public static int sum(int[] nums) {
+        int total = 0;
+        for (int num : nums) {
+            total += num;
+        }
+        return total;
+    }
+
+    // Method to return the average of all values in an array
+    public static double average(int[] nums) {
+        int total = sum(nums); // Reuse the sum() method
+        return (double) total / nums.length;
+    }
+
+    // Method to return the maximum value in an array
+    public static int max(int[] nums) {
+        int maxVal = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > maxVal) {
+                maxVal = nums[i];
+            }
+        }
+        return maxVal;
+    }
+
+    // Method to return the minimum value in an array
+    public static int min(int[] nums) {
+        int minVal = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < minVal) {
+                minVal = nums[i];
+            }
+        }
+        return minVal;
+    }
+
+    // Main method to test the above methods
+    public static void main(String[] args) {
+        int[] arr = {5, 9, 3, 12, 7, 3, 11, 5};
+
+        // Output the array in order using a while loop
+        int index = 0;
+        System.out.print("Array in order: ");
+        while (index < arr.length) {
+            System.out.print(arr[index] + " ");
+            index++;
+        }
+        System.out.println();
+
+        // Output the array in reverse using a for loop
+        System.out.print("Array in reverse: ");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        // Output the first and last values of the array
+        System.out.println("First value: " + arr[0]);
+        System.out.println("Last value: " + arr[arr.length - 1]);
+
+        // Call the methods and display the results
+        System.out.println("Max of 5 and 9: " + max(5, 9));
+        System.out.println("Min of 5 and 9: " + min(5, 9));
+        System.out.println("Sum of array: " + sum(arr));
+        System.out.println("Average of array: " + average(arr));
+        System.out.println("Max of array: " + max(arr));
+        System.out.println("Min of array: " + min(arr));
+    }
+}
